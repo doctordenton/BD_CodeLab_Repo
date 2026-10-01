@@ -12,6 +12,8 @@ public class PlayerBehavior: MonoBehaviour
     InputAction rightButton;
 
     private Vector3 playerStart;
+    private GameObject[] enemies;
+    private Vector3[] enemyStarts;
  
 
 
@@ -36,14 +38,14 @@ public class PlayerBehavior: MonoBehaviour
         Vector3 playerPosition = transform.position;
         if (upButton.IsPressed())
         {//delta time is the time between this frame and the last frame
-            playerPosition.y += 2 * Time.deltaTime;
+            playerPosition.y += 4 * Time.deltaTime;
             Debug.Log("go up");
 
         }
 
         if (downButton.IsPressed())
         {
-            playerPosition.y -= 2 * Time.deltaTime;
+            playerPosition.y -= 4 * Time.deltaTime;
             Debug.Log("go down");
         }
         // set my position to what we just changed
@@ -51,13 +53,13 @@ public class PlayerBehavior: MonoBehaviour
 
         if (rightButton.IsPressed())
         {
-            playerPosition.x += 2 * Time.deltaTime;
+            playerPosition.x += 4 * Time.deltaTime;
             Debug.Log("go right");
         }
 
         if (leftButton.IsPressed())
         {
-            playerPosition.x -= 2 * Time.deltaTime;
+            playerPosition.x -= 4 * Time.deltaTime;
             Debug.Log("go left");
         }
         transform.position = playerPosition;

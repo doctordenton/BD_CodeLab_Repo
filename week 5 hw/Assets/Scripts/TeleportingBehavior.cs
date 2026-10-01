@@ -11,8 +11,8 @@ public class TeleportingBehavior : MonoBehaviour
     // do you want this object to move between two points
     public bool InitialPath = false;
     // is this going straight (towards the end)
-    private bool GoingRight = true;
-    private bool GoingDown = true;
+    private bool InMotion = true;
+    
 
     private Vector3 strt;
     private Vector3 end;
@@ -45,7 +45,7 @@ public class TeleportingBehavior : MonoBehaviour
         if (InitialPath)
         {
             //if it's going straight (towards the end position)
-            if (GoingRight)
+            if (InMotion)
             {
                 //if the current x position is equal to the target position x value (end position x)
                 if (transform.position.x == targetPosition.x)
